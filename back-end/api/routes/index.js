@@ -13,7 +13,7 @@ var express = require('express'),
    router.get('/perihan/getProducts', perihanproductCtrl.getProducts);
    router.get('/perihan/getProduct/:perihanproductsId', perihanproductCtrl.getProduct);
    router.post('/perihan/createProduct', perihanproductCtrl.createProduct);
-   router.get('/perihan/getProductsBySeller/:seller',perihanproductCtrl.getProductsBySeller);
+   router.get('/perihan/gePrtoductsBySeller/:seller',perihanproductCtrl.getProductsBySeller);
  
    router.get('/perihan/getProductsByComponent/:component',
    perihanproductCtrl.getProductsByComponent

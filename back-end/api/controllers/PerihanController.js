@@ -145,6 +145,7 @@ module.exports.createProduct = function(req, res, next) {
   delete req.body.createdAt;
   delete req.body.updatedAt;
 
+
   Perihanproducts.create(req.body, function(err, product) {
     if (err) {
       return next(err);
@@ -158,7 +159,7 @@ module.exports.createProduct = function(req, res, next) {
 };
 
 module.exports.updateProduct = function(req, res, next) {
-  if (!Validations.isObjectId(req.params.perihanproductsId)) {
+  if (!Validations.isObjectId(req.params.loziproductsId)) {
     return res.status(422).json({
       err: null,
       msg: 'productId parameter must be a valid ObjectId.',
@@ -185,6 +186,7 @@ module.exports.updateProduct = function(req, res, next) {
   delete req.body.createdAt;
   req.body.updatedAt = moment().toDate();
 
+
   Perihanproducts.findByIdAndUpdate(
     req.params.perihanproductsId,
     {
@@ -209,7 +211,7 @@ module.exports.updateProduct = function(req, res, next) {
 };
 
 module.exports.deleteProduct = function(req, res, next) {
-  if (!Validations.isObjectId(req.params.perihanproductsId)) {
+  if (!Validations.isObjectId(req.params.loziproductsId)) {
     return res.status(422).json({
       err: null,
       msg: 'productId parameter must be a valid ObjectId.',

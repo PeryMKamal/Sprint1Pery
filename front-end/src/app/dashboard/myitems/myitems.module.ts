@@ -6,7 +6,7 @@ import { MyitemsService } from './myitems.service';
 
 @NgModule({
   imports: [
-    CommonModule, Ng2SmartTableModule,
+    CommonModule,Ng2SmartTableModule,
 
   ],
   declarations: [MyitemsComponent],

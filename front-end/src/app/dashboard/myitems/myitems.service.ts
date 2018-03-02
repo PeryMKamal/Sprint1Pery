@@ -7,16 +7,20 @@ export class MyitemsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createProduct(name:string, price:number) {
-    return this.httpClient.post(environment.apiUrl + 'perihan/createProduct', {'name':name, 'price':price});
+  createProduct(name:string, price:number, component:string, seller:string) {
+    return this.httpClient.post(environment.apiUrl + 'perihan/createProduct', {'name':name, 'price':price , 'component':component,'seller':seller});
   }
 
-  getProducts(){
-    return this.httpClient.get(environment.apiUrl + 'perihan/getProducts');
+   getProducts(){
+     return this.httpClient.get(environment.apiUrl + 'perihan/getProducts');
+   }
+
+   updateProduct(id:object, name:string, price:number) {
+    return this.httpClient.patch(environment.apiUrl + 'perihan/updateProduct/'+id,{'name':name, 'price':price});
   }
 
-//   updateProduct(name:string, price:number) {
-//     return this.httpClient.patch(environment.apiUrl + 'perihan/updateProduct/:productId', {'name':name,'price':price});
-//   }
+  deleteProduct(id:object){
+    return this.httpClient.delete(environment.apiUrl+ 'lozi/deleteProduct/'+id);
+  }
 
 }
