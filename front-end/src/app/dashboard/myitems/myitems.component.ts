@@ -37,20 +37,21 @@ export class MyitemsComponent implements OnInit {
         title: 'Price',
         filter:false
       },
-      createdAt: {
-        title: 'CreatedAt',
-        filter:false
-      },
-      updatedAt: {
-        title: 'UpdatedAt',
-        filter:false
-      },
+      
       component: {
         title: 'Component Name',
         filter:false
       },
       seller: {
         title: 'Seller Name',
+        filter:false
+      },
+      createdAt: {
+        title: 'CreatedAt',
+        filter:false
+      },
+      updatedAt: {
+        title: 'UpdatedAt',
         filter:false
       }
 
@@ -71,7 +72,7 @@ export class MyitemsComponent implements OnInit {
 onEditCall(event){
     event.confirm.resolve(event.newData);
     console.log(event);
-    this.myitemsService.updateProduct(event.newData._id, event.newData.name, event.newData.price).subscribe();
+    this.myitemsService.updateProduct(event.newData._id, event.newData.name, event.newData.price,event.newData.component,event.newData.seller).subscribe();
 }
 
 onDeleteCall(event){
